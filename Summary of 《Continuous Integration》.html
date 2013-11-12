@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: d5e7ce436666e7d4a2eeb12e7f8261dacceb3565 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+.markdown-body img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p>Trigger a Build whenever a change occurs. it can help us reduce assumptions on a projecvt by rebuilding software whenever a change occurs in a version control system.</p>
+<h3>The value of CI:</h3>
+<ul>
+<li>
+Reduce risks
+<ul>
+<li>Defects are detected and fixed sooner</li>
+<li>Health of software is measurable</li>
+<li>Reduce assumptions</li>
+</ul>
+</li>
+<li>
+Reduce repetitive manual processes
+<ul>
+<li>CI can be run repeatly</li>
+</ul>
+</li>
+<li>Generate deployable software at any time and at any place</li>
+<li>
+Enable better project visibility
+<ul>
+<li>Effective decisions</li>
+<li>Noticing trends</li>
+</ul>
+</li>
+<li>Establish greater confidence in the software product from the development team</li>
+</ul>
+<h3>Steps of implement CI</h3>
+<ul>
+<li>Identify, find the processes that need to be automated</li>
+<li>Build, create some scripts to run the process</li>
+<li>Share, make everything managed by version control</li>
+<li>Continuous, let script run when a change occurs</li>
+</ul>
+<h3>Best Practices using CI</h3>
+<ul>
+<li>
+Commit code frequently
+<ul>
+<li>Make small changes</li>
+<li>Commit after each task</li>
+<li>At least once a day</li>
+</ul>
+</li>
+<li>
+Do not commit broken code
+<ul>
+<li>Do not commit code that does not compile with other code or fails a test</li>
+</ul>
+</li>
+<li>
+Fix broken builds immediately
+<ul>
+<li>make it as high priority</li>
+</ul>
+</li>
+<li>
+Write automated developer tests
+<ul>
+<li>Make sure tests will be run during build</li>
+</ul>
+</li>
+<li>
+Run private builds
+<ul>
+<li>This is to prevent integration failure</li>
+</ul>
+</li>
+<li>Avoid getting broken code</li>
+</ul>
+<h3>Software Risks</h3>
+<ul>
+<li>
+Lack of Deployable Software
+<ul>
+<li>Little or no confidence in whether we could even build the software</li>
+<li>Lengthy integration phases before delivering the software internally or externally, during which time nothing else got done</li>
+<li>Inability to produce and reproduce testable builds</li>
+</ul>
+</li>
+<li>Late Discovery of Defects</li>
+<li>Lack of Project Visibility</li>
+<li>Low-quality Software</li>
+</ul>
+<h3>Build Software at Every Change</h3>
+<ul>
+<li>Perform build automatically</li>
+<li>Perfomr build through single command</li>
+<li>Separate build script from IDE</li>
+<li>Centralize Software Assets</li>
+<li>Create a Consistent Directory Structure</li>
+<li>Fail Builds Fast</li>
+<li>Build for Any Environment</li>
+<li>Use a Dedicated Integration Build Machine</li>
+<li>Use a CI Server</li>
+<li>Run Manual Integration Builds</li>
+<li>Run Fast Builds</li>
+<li>Stage Builds</li>
+</ul>
+<h3>Build Type</h3>
+<ul>
+<li>Private Build</li>
+<li>Integration Build</li>
+<li>Release Build</li>
+</ul>
+<h3>Build Mechanisms</h3>
+<ul>
+<li>On-demand</li>
+<li>Scheduled</li>
+<li>Poll for changes</li>
+<li>Event-driven</li>
+</ul>
+<h3>Responsibilities of CI Server</h3>
+<ul>
+<li>Poll for changes in the version control repository on a specified time interval</li>
+<li>Perform certain actions on a scheduled basis, such as hourly or daily</li>
+<li>Identify a &quot;quiet period&quot; during which no integration builds are performed for the project</li>
+<li>Support for different build scripting tools including command-line tools such as Rake, make, Ant or NAnt</li>
+<li>Send e-mails to the concerned parties</li>
+<li>Display a history of previous builds</li>
+<li>Display a dashboard that is Web accessible so that everyone can review integration build information
+-Support multiple version control systems for your different projects</li>
+</ul>
+<h3>Continuous Database Integration</h3>
+<ul>
+<li>Automate Database Integration</li>
+<li>Use a Local Database Sandbox</li>
+<li>
+Use a Version Control Repository to Share Database Assets
+<ul>
+<li>DDL to drop and create tables and views, including constraints and triggers</li>
+<li>Stored procedures and functions</li>
+<li>Entity relationship diagrams</li>
+<li>Test data for differrent environments</li>
+<li>Specific database configurations</li>
+</ul>
+</li>
+<li>Give Developers Capability to Modify the Database</li>
+<li>Make DBA Part of Development Team</li>
+</ul>
+<h3>Repeatable Database Integration Activities</h3>
+<ul>
+<li>Drop database</li>
+<li>Create database</li>
+<li>Insert system data</li>
+<li>Insert test data</li>
+<li>Migrate database and data</li>
+<li>Set up database instances in multiple environments</li>
+<li>Modify column attributes and constraints</li>
+<li>Modify test data</li>
+<li>Modify stored procedures/functions/triggers</li>
+<li>Obtain access to different environments</li>
+<li>Back up/restore large data sets</li>
+</ul>
+<h4>The reliablity of a linear system is the product of the reliablity of each of the system's components, i.e. a system with three components, each component is 90% reliable, the the whold product is 73%(90%<em>90%</em>90%) reliable.</h4>
+<p><strong>Unit tests</strong> verify the behavior of samll element in a software system, which are most often a single class.</p>
+<p><strong>Component or subsystem tests</strong> verify portions of a system and may require a fully installed system or some external dependencies, such as database, file system or network endpoint.</p>
+<p><strong>System tests</strong> exercise a complete software system and therefore require a fully installed system, such as a servlet container and associated databas.</p>
+<p><strong>Functional tests</strong> or acceptance tests are used to test the functionality of an application from the viewpoint of a client, which means the tests themselves mimic clients.</p>
+<p>We need to categorize the tests during creating the test cases, as different kinds of tests need different duration to run.</p>
+<p>Time requirement for test: Unit Test &gt; Component Test &gt; System Test</p>
+<p>We should create test against defect. a test case can make sure: 1) you fix the defect; 2) prevent the defect from recurring.</p>
+<h3>Continuous Testing</h3>
+<ul>
+<li>Automate Unit Tests</li>
+<li>Automate Component Tests</li>
+<li>Automate System Tests</li>
+<li>Automate Functional Tests</li>
+<li>Categorize Developer Tests</li>
+<li>Run Faster Tests First</li>
+<li>Write Tests for Defects</li>
+<li>Make Component Tests Repeatable</li>
+<li>Limit Test Cases to One Asset</li>
+</ul>
+<p>Pair programming is treated as best practice of Agile. but many companies can not afford it.</p>
+<p>Peer-based code reviews are generally considered benegicial to the overall quality of a code base because they present opportunities for an objective analysis by a second pair of eyes.</p>
+<p>There are many tools can help do this, like Java's PMD and .NET's FxCop.</p>
+<p>We prefer to use tools to run inspection automatically, Once you run a automatic build, you should run automatic inspection.</p>
+<p>We can use NDepend or some similiar tols to check the dependencies of different classes. it will generate a human readable html report.</p>
+<p>We need to consider how to add inspection to continous integration process, it will improve software quality.</p>
+<h3>A typical deployment includes:</h3>
+<ul>
+<li>Label a repository's assets</li>
+<li>Produce a clean environment, free of assumptions</li>
+<li>Generate and label a build directly from the repository and install it on the target machine</li>
+<li>Successfully run tests at all levels in a clone of the production environment</li>
+<li>Create build feedback reports</li>
+<li>If necessary, you can roll back the release by using labels in your version control repository</li>
+</ul>
+<h3>When preparing a clean environment, it may include:</h3>
+<ul>
+<li>Operating System</li>
+<li>Operating system configuration, i.e. network connectivity/firewall</li>
+<li>Server components for the software, i.e. database server/messaging server</li>
+<li>Server configuration</li>
+<li>Thrid-party tools, i.e. Web Frameworks</li>
+<li>Custom software</li>
+</ul>
+<h4>Feedback is a key output for a CI system, we should send the right information to the right people at the right time and in the right way.</h4>
+<p>Everyone needs to reveive some type of feedback on the project, but not necessarily every item every time. Sending feedback to all project members too often will ensure that everyone begins to ignore the messages. it is important that your team does not learn to ignore messages from CI build process.</p>
+<h3>The following people should receive feedback:</h3>
+<ul>
+<li>Project Manager</li>
+<li>Architect/Technical Lead</li>
+<li>Developers</li>
+<li>Testers</li>
+</ul>
+<p>At the heart of continous feedback is reducing the time between when a defect is introduces, discovered and fixed.</p>
+<h3>We can use the following ways to deliver feedback:</h3>
+<ul>
+<li>eMail</li>
+<li>SMS</li>
+<li>Ambient Orb and X10 Devices</li>
+<li>Windows Taskbar</li>
+<li>Sounds</li>
+<li>Wide-Screen Monitors</li>
+</ul>
+<h3>CI Tools</h3>
+<ul>
+<li>Anthillpro</li>
+<li>Apache Continuum(Maven)</li>
+<li>Banboo</li>
+<li>BuildForge</li>
+<li>Continous Integration Server Matrix</li>
+<li>CruiseControl</li>
+<li>CruiseControl.NET</li>
+<li>Draco.NET</li>
+<li>Gauntlet(not found)</li>
+<li>LuntBuild</li>
+<li>ParaBuild</li>
+<li>PMEase QuickBuild</li>
+<li>Sin</li>
+</ul>
+<h3>Build Script Tools</h3>
+<ul>
+<li>Ant</li>
+<li>Groovy</li>
+<li>Maven</li>
+<li>NAnt</li>
+<li>Rake</li>
+</ul>
+<h3>Version Control Tools</h3>
+<ul>
+<li>ClearCase</li>
+<li>CVS</li>
+<li>MKS</li>
+<li>SubVersion</li>
+<li>SnapshotCM</li>
+<li>RTC</li>
+<li>GitHub</li>
+<li>Visual SourceSafe</li>
+</ul>
+<h3>DataBase Resources</h3>
+<ul>
+<li>Hypersonic DB</li>
+<li>Mckoi</li>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>PostgreSQL</li>
+</ul>
+<h3>Test Tools</h3>
+<ul>
+<li>Agitator</li>
+<li>DbUnit</li>
+<li>Fit</li>
+<li>FitNesse</li>
+<li>Floyd(not found)</li>
+<li>HtmlUnit</li>
+<li>JUnit</li>
+<li>JWebUnit</li>
+<li>NDbUnit</li>
+<li>NUnit</li>
+<li>Selenium</li>
+<li>SQLUnit</li>
+<li>TestNG</li>
+<li>utPLSQL</li>
+<li>Watir</li>
+<li>xUnit Test Patterns</li>
+</ul>
+<h3>Inspection Tools</h3>
+<ul>
+<li>Checkstyle</li>
+<li>Clover</li>
+<li>Cobertura</li>
+<li>EMMA</li>
+<li>FindBugs</li>
+<li>FxCop</li>
+<li>JavaNCSS</li>
+<li>JDepend</li>
+<li>NCover</li>
+<li>NDepend</li>
+<li>PMD</li>
+<li>Simian</li>
+<li>SourceMonitor</li>
+</ul>
+<h3>Deployment Resources</h3>
+<ul>
+<li>Capistrano</li>
+</ul>
+<h3>Documentation Resources</h3>
+<ul>
+<li>Doxygen</li>
+<li>JavaDoc</li>
+<li>NDoc</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
